@@ -4,12 +4,10 @@ CREATE DATABASE burgers_db;
 USE burgers_db;
 CREATE TABLE burgers(
    id INT AUTO_INCREMENT,
-   burger_name VARCHAR,
+   burger_name VARCHAR(250),
    devoured BOOLEAN DEFAULT true,
    PRIMARY KEY(id)
 );
-
-
 
 
 --       Run the `schema.sql` and `seeds.sql` files into the mysql server from the command line
