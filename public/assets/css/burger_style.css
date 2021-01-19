@@ -1,3 +1,10 @@
+.flex-container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
 
-
-
+body{
+    background-color: lightyellow;
+}
