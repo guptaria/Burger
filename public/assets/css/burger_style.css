@@ -11,22 +11,32 @@
       background-repeat: no-repeat;
       background-size: cover;
       /* Needed to position the navbar */
-      position: relative;
+      /* position: relative; */
       color:white;
     }
     
 .container-1{
-    position:absolute;
+    /* position:absolute; */
+    display:flex;
    color:white;
-   margin-right: 800px; 
+   /* margin-right: 800px;  */
+   align-content: center;
+   /* align-items: center; */
 }
 .container-2{
+    display:flex;
     color:white;
-    margin-left: 480px;
+    /* margin-left: 480px; */
+    justify-content: center;
+
 }
 .container-3{
-    position:absolute;
+    /* position:absolute; */
+    display:flex;
     color:white;
-    margin-left: 800px;
+    /* margin-left: 800px; */
+    flex-direction: column-reverse;
+    align-items: center;
+
 }
 
