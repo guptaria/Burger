@@ -4,5 +4,6 @@
 
 	<button class="burger-status" data-id="{{id}}" data-newstatus={{devoured}}>
 		{{#unless devoured}}<i class="fas fa-utensils"></i>{{/unless}}
+		{{#if devoured}}<i class="far fa-thumbs-up"></i>{{/if}}
 	</button>
 </li>
