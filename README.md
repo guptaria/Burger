@@ -1,55 +1,38 @@
-# 🍔 Eat Da Burger!!
+# 🍔 Burger!!
 
 ## Description
-Eat Da Burger is a Node, Express, Handlebars, and MySQL burger app that lets users input the names of burgers they'd like to eat... and then devour them!<br>
+This project is a full stack application that allows you to place an order for a burger. When you place an order, the burger you enter in the form field is added to the list of burgers on the left side of the screen. Each burger in the list has a Devour me button. Clicking this button moves the burger from the list on the left side of the screen to the list on the right. The list on the right is a list of burgers that have already been devoured. Each burger in this list has a Throw away button that allows you to remove the burger, which deletes the burger from the user interface as well as from the MySQL database.<br>This project uses MySQL, Node, Express, Handlebars, ORM (Object Relational Mapper). Node and MySQL are used to query and route data in the application. Express is the backend web framework used for this application, and Handlebars is a templating language that is used to generate the HTML.
+
 Key words : Servers, Express.js, MySQL , API routes, Handeblars, Object-relational mapping, Model-View-Controller, Template engines.
 
 ## Table of Contents 
-* [Installation](#Installation)
 * [Functionality](#Functionality)
-* [Technologies_Used](#Technologies_Used)
+* [Programming/Scripting_Languages](#Programming/Scripting_Languages)
 * [MVC_design_pattern](#MVC_design_pattern)
-* [Code_Snippet](#Code_Snippet)
+* [Getting_Started](#Getting_Started)
+* [Structure_Of_the_Project](#Structure_Of_the_Project)
 * [Final_Result](#Final_Result)
 * [Video_Demo](#Video_Demo)
 * [ResourceReferred](#ResourceReferred)
 * [Github_Link](#Github_Link)
 
-
-
-## Installation
-There are a few things that are required for this application. You will need to intsall the following: npm, inquirer, and node. Once these are installed in your CLI you will run the application by entering node app.js . Follow the prompts until all questions have been answered or you would no longer like to add anymore team members, then open the team.html file that is generated in the output directory.
-
 ## Functionality
 Using an home-grown ORM, the app has 3 basic CRUD functions...
-
 READ all entries from the MySQL database and display them to the DOM using Handlebars.<br>
 UPDATE a selected burger by clicking "Devour It", which... * hits an /burger/eat/:id route in Express to change its "devoured" status in the MySQL database * re-routes the webpage back to the index, where the burger is now in the devoured column (via Handlebars)<br>
 CREATE a new burger using the "Place Order" form, which... * hits a /burger/create route in Express to insert a new burger into the MySQL database * re-routes the webpage back to the index, where the burger is now ready to be eaten column (via Handlebars)
 
-
-## Programming/Scripting Languages
+## Programming/Scripting_Languages
 ### Front-end
-HTML, <br>CSS (Bootstrap)<br>
-Javascript (JQuery)<br>
+* HTML,CSS (Bootstrap)
+* Javascript (JQuery)
+
 ### Back-end
-JavaScript (Node.js, v8.11.2)<br>
-npm (v6.4.0) packages: routing (body-parser, express, path)<br>
-templating engine: handlebars<br>
-database: SQL
-
-
-## Technologies_Used
-Node.js - Used for package managment and to execute JavaScript code outside of a browser to build command line tool for server-side scripting.
-Jest - Used to test and build Javascript classes and methods.
-Inquirer - npm package installed by node used to promt user for employee info.
-Javascript - Used to base functionality of functions and prompts within the application.
-ES6 - Used to build prompts, functions, methods, and classes.
-HTML - Used to generate HTML to be displayed in the browser.
-CSS - Used to style html elements.
-Git - Version control system to track changes to source code
-GitHub - Hosts repository that can be deployed to GitHub Pages
-
+* Node.js,
+* npm packages: routing (body-parser, express)
+* Templating engine: handlebars
+* database: MYSQL
+* ORM - Object Relational Mapping
 
 ## MVC_design_pattern
 This project also follows the MVC (Model-View-Controller) design pattern. The MVC design pattern assigns objects in the application one of three roles (model, view, or controller) and defines the way the different parts of the application communicate with one another.
@@ -61,107 +44,164 @@ Controller object: A controller object controls the flow of data between the vie
 Model object: A model object manages the data. When data is created or changed by the user in the view (for example, a user devours or throws away a burger), that change is communicated via the controller to the model. Also, when data is created or changed in the model, the model communicates that change via the controller to the view, and the view displays the updated data to the user.
 
 
-## Code_Snippet
-Using classes as well as our templates again allows for greater modularity. Each piece can be built upon in the future and simply referenced elsewhere in the code or in other files by requiring the file that it lives on. In this way we are setting the base of our application to be more scalable.
+
+## Getting_Started
+The following section will take you through the steps of setting up this application and getting it running locally on your computer.
+
+If you don't want to set up this project locally and just want to see the deployed application, go to https://gentle-caverns-56054.herokuapp.com/.
+
+To set up this application locally on your computer, perform the following steps:
+
+* [Clone_the_repository](#Clone_the_repository)
+* [Install_Node.js](#Install_Node.js)
+* [Install_the_dependencies](#Install_the_dependencies)
+* [Install_MySQL_Workbench](#Install_MySQL_Workbench)
+* [Set_up_a_development_database](#Set_up_a_development_database)
+* [Create_a_.env_file_to_store_your_MySQL_Password](#Create_a_.env_file_to_store_your_MySQL_Password)
+* [Verify_database_connection_information](#Verify_database_connection_information)
+* [Start_the_server](#Start_the_server)
+
+1. ### Clone_the_repository
+The first step is to clone the project repository to a local directory on your computer. To clone the repository, run the following commands:
 ```
-class Employee {
-    constructor (name, id, email) {
-        this.name = name;
-        this.id = id;
-        this.email = email;
-        
-        
-    }
-    getName() {
-        return this.name;
-    }
-
-    getId() {
-        return this.id;
-    }
-
-    getEmail() {
-        return this.email;
-    }
-
-    getRole() {
-        return "Employee";
-    }
-}
-
-module.exports = Employee;
+  git clone https://github.com/guptaria/Burger.git
+  cd Burger
 ```
+## Structure_Of_the_Project
+After you clone the repository, navigate to the project root directory (burger). The project directory structure is set up as follows:
+* server.js: This file does the following:
+
+   * Defines and requires the dependencies, including express, body-parser, and express-handlebars.
+   * Sets up the Express server.
+   * Sets up the Express server to handle data parsing using body-parser.
+   * Points the server to the API routes, which gives the server a map of how to respond when users visit or request  data from various URLs.
+   * Defines the port the server is listening on.
+   * Starts the server.
+   * Allows the app to serve static content from the public directory.
 
 
-```
-function addEngineer() {
-  inquirer
-    .prompt(questions.engineerQuestions)
-    .then(answers => {
-      const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);      //creating engineer object
-      teamMembers.push(engineer);
-      // console.log(teamMembers);
-      if (answers.addmore === "Engineer") {
-        addEngineer();     //recursive function
-      } else if (answers.addmore === "Intern") {
-        addIntern();
-      } else {
-        console.log("No-one else to add!");
-        renderTeam();
-      }
+* public: Contains the static content (images, Javascript, and CSS).
+
+   * assets/css/burger_style.css: External CSS stylesheet.
+   * assets/img: Contains icons and images used in the application.
+   * assets/js/burger.js: Contains the jQuery ajax POST, DELETE, and PUT requests for adding a burger, throwing away a burger, and updating the devoured value for a burger, respectively.
+
+* models: Contains a file called burger.js, which contains functions used to manage the application data and interact with the database.
+  
+   * The burger.js file also includes the code that will call the ORM functions using burger specific input for the ORM.
+
+* db: Contains 2 files:
+
+   * schema.sql: The database schema. The schema is what describes the structure of the database table, and the datatypes that each column of the table can contain. For this project, the database includes one table that includes columns for id, burger name, and devoured state (true or false).
+   * seeds.sql: Used to populate the table in the development database with some starter burger data.
+* config: Contains 2 files.
+
+   * connection.js: Contains the code to connect Node to MySQL.
+   * orm.js: Contains the methods that will execute the necessary MySQL commands in the controllers. These methods are used to retrieve and store data in the database.
+* controllers: Contains a file called burgersController.js, which contains different routes (GET, POST, PUT, and DELETE). These routes are used to pass information to and from the view and model objects.
+
+* views: Contains the Handlebars files, which are templates used to generate the html files.
+
+* package.json: Lists the project dependencies (third party npm packages) and their version numbers.
+* .gitignore: Anything listed inside this file will not be tracked by GitHub when code is committed.
+* package-lock.json: Dependency tree for the project. Lists all the dependencies and their versions.
+2. Install Node.js
+If you don't already have Node.js installed on your computer, you can install the latest version here: https://nodejs.org/en/.
+
+3. Install the dependencies
+The following npm packages are dependencies to the project.
+
+After you clone the repository to a local directory, change directory to the project root directory and run the following command to install the required npm packages:
+
+npm install
+express - a Node.js web application framework (https://www.npmjs.com/package/express).
+body-parser - used to parse incoming request bodies in a middleware. (https://www.npmjs.com/package/body-parser)
+dotenv - used to retrieve the MySQL password from a .env file (https://www.npmjs.com/package/dotenv).
+mysql - used to create a connection to the MySQL database via the command line.(https://www.npmjs.com/package/mysql)
+express-handlebars - allows you to use handlebars to create templates to build the HTML.
+(https://www.npmjs.com/package/express-handlebars)
+Version information for each of these packages is available in the package.json file in the project root directory.
+
+4. Install_MySQL_Workbench
+If you don't already have MySQL Workbench installed on your computer, you can install the latest version here: https://www.mysql.com/products/workbench/
+
+For this project, MySQL Workbench is used to visually design, create, and manage the database used to store burger data.
+
+5. Set_up_a_development_database
+To set up a development database that you can use with this application, perform the following steps:
+
+Open the db/schema.sql file and paste the contents of this file into MySQL Workbench.
+
+Execute the following statements:
+
+  CREATE DATABASE burger_db;
+  USE burger_db;
+  
+Running these statements creates a database called burger_db and sets it as the current database being used.
+
+Execute the following statement to create a table called burgers.
+
+  CREATE TABLE burgers
+  (
+    id int NOT NULL AUTO_INCREMENT,
+    burger_name varchar(255) NOT NULL,
+    devoured boolean NOT NULL,
+    PRIMARY KEY (id)
+  );
+  
+This table includes columns for id (which is the primary key), burger name, and devoured (boolean value).
+
+To populate the burgers table with some starting burger data, open up the db/seeds.sql file and paste the contents into MySQL Workbench. Execute the code in seeds.sql from MySQL Workbench:
+
+  INSERT INTO burgers (burger_name, devoured) VALUES ("Awesome Burger", true);
+INSERT INTO burgers (burger_name, devoured) VALUES ("Good Burger", false);
 
 
-    })
-    .catch(error => {
-      console.log(error);
+INSERT INTO burgers (burger_name, devoured) VALUES ("Mondo Burger", true);
 
-    });
+Your table should look similar to the following example:
 
-}
-```
 
-```
+6. Create a .env file to store your MySQL Password
+If you set up MySQL to use a password to connect to your database, you need to provide your own .env file. If you did not set up MySQL with a password, you can skip this step.
 
-const managerQuestions = [
-  {
-    type: 'input',
-    name: 'name',
-    message: "What is your manager's name?",
-    validate: answer => {
-      const containsNumsSpecial = /[^a-zA-Z]/g; // Only allow letters
-      const temp = answer.match(containsNumsSpecial);   //using regex
+Create a file named .env in the project root directory (burger) with the following contents. Replace mysql_password with your actual MySQL password.
 
-      // return false if user input is empty
-      if (answer.length === 0) {
-        return "Name should be a string and cannot be empty";
+# MySQL Password
 
-      };
+MYSQL_PASSWORD='mysql_password'
+This file will be used by the dotenv npm package, which will pass the password value as an environment variable to the global process.env object in node. Because .env is specified in the .gitignore file, the password is kept private.
 
-      // return false if name contains any special characters or numbers
-      if (temp !== null) {
-        return "Name should not contain special characters or numbers";
-      }
+7. Verify database connection information
+Open the config/connection.js file and verify that the database connection information (host, user, port, password, and database) reflects the database you just created.
 
-      return true;
-    }
-  },
-  ```
+Modify the connection properties as needed to reflect your database instance.
 
-## Final_Result
-Testing 
-![](Assets/screenshotTest.png)
-![](Assets/screenshotBrowser.png)
+For example:
 
-## Video_Demo
-[Click to Watch the Video](https://drive.google.com/file/d/14Q8pHlC8-h4D6Bux6fXQvUejTbpiKrjg/view)
+  var connection = mysql.createConnection({
+    host: "localhost",
+    port: 3306,
+    user: "root",
+    password: process.env.MYSQL_PASSWORD,
+    database: "burger_db"
+  });
+8. Start_the_server
+After performing all of the setup steps in the Getting started section, navigate to the project root directory (burger) and run the following command to start the server:
 
-## ResourceReferred
-[For inquirer](https://www.npmjs.com/package/inquirer) <br>
-[Constructors](https://www.w3schools.com/js/js_object_constructors.asp)<br>
+node server.js
+
+
+To verify that the server has started and the application is working locally on your computer, open Chrome and go to http://localhost:3000.
+
+
+## Screenshots
+![](public/assets/img/screenshot.png)
+
 
 
 ## Github_Link
-[**URL of My Github Repository**](https://github.com/guptaria/TeamDashboard)<br>
+[**URL of My Github Repository**](https://github.com/guptaria/Burger)<br>
 
 
 
