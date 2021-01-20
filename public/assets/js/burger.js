@@ -2,19 +2,21 @@
 $(function() {
     $(".burger-status").on("click", function(event) {
       var id = $(this).data("id");
-      var newstatus = $(this).data("newstatus");
+      var newEaten = $(this).data("newEaten") === false;
   
       var newBurgerStatus = {
-        devoured: "true"
+        devoured: newEaten
       };
-  
+  console.log(`id: ${id}`);
+  console.log(`devoured ${newBurgerStatus.devoured}`)
+
       // Send the PUT request.
-      $.ajax("/api/cats/" + id, {
+      $.ajax("/api/burgers/" + id, {
         type: "PUT",
         data: newBurgerStatus
       }).then(
         function() {
-          console.log("Burger is eaten", newBurgerStatus);
+          console.log("Burger is eaten", newEaten);
           // Reload the page to get the updated list
           location.reload();
         }
@@ -27,7 +29,7 @@ $(function() {
   
       var newBurger = {
         burger_name: $("#bur").val().trim(),
-        devoured:"false"
+        devoured: "false"
       };
   
       // Send the POST request.
@@ -42,4 +44,22 @@ $(function() {
         }
       );
     });
+
+  //   $(".delete-burger").on("click", function (event) {
+  //     console.log("working")
+  //     var id = $(this).data("id");
+
+  //     // Send the DELETE request.
+  //     $.ajax("/api/burgers/" + id, {
+  //         type: "DELETE"
+  //     }).then(
+  //         function () {
+
+  //             // Reload the page to get the updated list
+  //             location.reload();
+  //         }
+  //     );
+  // });
+
+
 });
