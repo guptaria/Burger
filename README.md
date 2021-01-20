@@ -143,23 +143,22 @@ Running these statements creates a database called burger_db and sets it as the 
 
 3. Execute the following statement to create a table called burgers.
 ```
-  CREATE TABLE burgers
-  (
-    id int NOT NULL AUTO_INCREMENT,
-    burger_name varchar(255) NOT NULL,
-    devoured boolean NOT NULL,
-    PRIMARY KEY (id)
-  );
+  CREATE TABLE burgers(
+   id INT AUTO_INCREMENT,
+   burger_name VARCHAR(250) NOT NULL,
+   devoured BOOLEAN DEFAULT false,
+   PRIMARY KEY(id)
+);
   ```
 This table includes columns for id (which is the primary key), burger name, and devoured (boolean value).
 
 4. To populate the burgers table with some starting burger data, open up the db/seeds.sql file and paste the contents into MySQL Workbench. Execute the code in seeds.sql from MySQL Workbench:
 ```
-  INSERT INTO burgers (burger_name, devoured) VALUES ("Awesome Burger", true);
-INSERT INTO burgers (burger_name, devoured) VALUES ("Good Burger", false);
-
-
-INSERT INTO burgers (burger_name, devoured) VALUES ("Mondo Burger", true);
+INSERT INTO burgers(burger_name,devoured)
+VALUES("Cheese Burger",true),
+("Beef Burger",false),("Veggie Burger",true),
+("Chicken Burger",false),("Fish Burger",true),
+("Bacon Burger",true);
 ```
 Your table should look similar to the following example:
 ![](public/assets/img/table.png)
