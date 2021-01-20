@@ -105,42 +105,44 @@ After you clone the repository, navigate to the project root directory (burger).
 * package.json: Lists the project dependencies (third party npm packages) and their version numbers.
 * .gitignore: Anything listed inside this file will not be tracked by GitHub when code is committed.
 * package-lock.json: Dependency tree for the project. Lists all the dependencies and their versions.
-2. Install Node.js
+
+2. ### Install_Node.js
 If you don't already have Node.js installed on your computer, you can install the latest version here: https://nodejs.org/en/.
 
-3. Install the dependencies
+3. ### Install_the_dependencies
 The following npm packages are dependencies to the project.
 
 After you clone the repository to a local directory, change directory to the project root directory and run the following command to install the required npm packages:
-
+```
 npm install
-express - a Node.js web application framework (https://www.npmjs.com/package/express).
-body-parser - used to parse incoming request bodies in a middleware. (https://www.npmjs.com/package/body-parser)
-dotenv - used to retrieve the MySQL password from a .env file (https://www.npmjs.com/package/dotenv).
-mysql - used to create a connection to the MySQL database via the command line.(https://www.npmjs.com/package/mysql)
-express-handlebars - allows you to use handlebars to create templates to build the HTML.
+```
+* express - a Node.js web application framework (https://www.npmjs.com/package/express).
+* body-parser - used to parse incoming request bodies in a middleware. (https://www.npmjs.com/package/body-parser)
+* dotenv - used to retrieve the MySQL password from a .env file (https://www.npmjs.com/package/dotenv).
+* mysql - used to create a connection to the MySQL database via the command line.(https://www.npmjs.com/package/mysql)
+* express-handlebars - allows you to use handlebars to create templates to build the HTML.
 (https://www.npmjs.com/package/express-handlebars)
 Version information for each of these packages is available in the package.json file in the project root directory.
 
-4. Install_MySQL_Workbench
+4. ###  Install_MySQL_Workbench
 If you don't already have MySQL Workbench installed on your computer, you can install the latest version here: https://www.mysql.com/products/workbench/
 
 For this project, MySQL Workbench is used to visually design, create, and manage the database used to store burger data.
 
-5. Set_up_a_development_database
+5. ### Set_up_a_development_database
 To set up a development database that you can use with this application, perform the following steps:
 
-Open the db/schema.sql file and paste the contents of this file into MySQL Workbench.
+1. Open the db/schema.sql file and paste the contents of this file into MySQL Workbench.
 
-Execute the following statements:
-
+2. Execute the following statements:
+```
   CREATE DATABASE burger_db;
   USE burger_db;
-  
+  ```
 Running these statements creates a database called burger_db and sets it as the current database being used.
 
-Execute the following statement to create a table called burgers.
-
+3. Execute the following statement to create a table called burgers.
+```
   CREATE TABLE burgers
   (
     id int NOT NULL AUTO_INCREMENT,
@@ -148,19 +150,19 @@ Execute the following statement to create a table called burgers.
     devoured boolean NOT NULL,
     PRIMARY KEY (id)
   );
-  
+  ```
 This table includes columns for id (which is the primary key), burger name, and devoured (boolean value).
 
-To populate the burgers table with some starting burger data, open up the db/seeds.sql file and paste the contents into MySQL Workbench. Execute the code in seeds.sql from MySQL Workbench:
-
+4. To populate the burgers table with some starting burger data, open up the db/seeds.sql file and paste the contents into MySQL Workbench. Execute the code in seeds.sql from MySQL Workbench:
+```
   INSERT INTO burgers (burger_name, devoured) VALUES ("Awesome Burger", true);
 INSERT INTO burgers (burger_name, devoured) VALUES ("Good Burger", false);
 
 
 INSERT INTO burgers (burger_name, devoured) VALUES ("Mondo Burger", true);
-
+```
 Your table should look similar to the following example:
-
+![](public/assets/img/table.png)
 
 6. Create a .env file to store your MySQL Password
 If you set up MySQL to use a password to connect to your database, you need to provide your own .env file. If you did not set up MySQL with a password, you can skip this step.
