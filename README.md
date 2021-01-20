@@ -11,9 +11,7 @@ Key words : Servers, Express.js, MySQL , API routes, Handeblars, Object-relation
 * [MVC_design_pattern](#MVC_design_pattern)
 * [Getting_Started](#Getting_Started)
 * [Structure_Of_the_Project](#Structure_Of_the_Project)
-* [Final_Result](#Final_Result)
-* [Video_Demo](#Video_Demo)
-* [ResourceReferred](#ResourceReferred)
+* [Screenshots](#Screenshots)
 * [Github_Link](#Github_Link)
 
 ## Functionality
@@ -163,23 +161,23 @@ VALUES("Cheese Burger",true),
 Your table should look similar to the following example:
 ![](public/assets/img/table.png)
 
-6. Create a .env file to store your MySQL Password
+6. ### Create_a_.env_file_to_store_your_MySQL_Password
 If you set up MySQL to use a password to connect to your database, you need to provide your own .env file. If you did not set up MySQL with a password, you can skip this step.
 
 Create a file named .env in the project root directory (burger) with the following contents. Replace mysql_password with your actual MySQL password.
-
+```
 # MySQL Password
-
 MYSQL_PASSWORD='mysql_password'
+```
 This file will be used by the dotenv npm package, which will pass the password value as an environment variable to the global process.env object in node. Because .env is specified in the .gitignore file, the password is kept private.
 
-7. Verify database connection information
+7. ### Verify_database_connection_information
 Open the config/connection.js file and verify that the database connection information (host, user, port, password, and database) reflects the database you just created.
 
 Modify the connection properties as needed to reflect your database instance.
 
 For example:
-
+```
   var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
@@ -187,13 +185,14 @@ For example:
     password: process.env.MYSQL_PASSWORD,
     database: "burger_db"
   });
-8. Start_the_server
+  ```
+8. ### Start_the_server
 After performing all of the setup steps in the Getting started section, navigate to the project root directory (burger) and run the following command to start the server:
-
+```
 node server.js
+```
 
-
-To verify that the server has started and the application is working locally on your computer, open Chrome and go to http://localhost:3000.
+To verify that the server has started and the application is working locally on your computer, open Chrome and go to http://localhost:8080.
 
 
 ## Screenshots
