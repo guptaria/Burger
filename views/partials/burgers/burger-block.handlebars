@@ -2,8 +2,10 @@
 <li>
 	{{burger_name}}
 
-	<button class="burger-status" data-id="{{id}}" data-newstatus={{devoured}}>
-		{{#unless devoured}}<i class="fas fa-utensils"></i>{{/unless}}
-		{{#if devoured}}<i class="far fa-thumbs-up"></i>{{/if}}
+	<button class="burger-status" data-id="{{id}}" data-neweaten={{devoured}}>
+		{{!-- {{#if devoured}}<i class="far fa-thumbs-up"></i>{{/if}}
+		{{#unless devoured}}<i class="fas fa-utensils"></i>{{/unless}} --}}
+			{{#if devoured}}<i class="fas fa-utensils"></i>{{else}}<i class="far fa-thumbs-up"></i>{{/if}}
+		
 	</button>
 </li>

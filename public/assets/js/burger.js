@@ -2,7 +2,7 @@
 $(function() {
     $(".burger-status").on("click", function(event) {
       var id = $(this).data("id");
-      var newEaten = $(this).data("newEaten") === false;
+      var newEaten = $(this).data("neweaten");
   
       var newBurgerStatus = {
         devoured: newEaten
@@ -29,7 +29,7 @@ $(function() {
   
       var newBurger = {
         burger_name: $("#bur").val().trim(),
-        devoured: "false"
+        devoured: 0
       };
   
       // Send the POST request.
@@ -37,7 +37,8 @@ $(function() {
         type: "POST",
         data: newBurger
       }).then(
-        function() {
+        function(res) {
+          console.log(res);
           console.log("Burger Ready to eat");
           // Reload the page to get the updated list
           location.reload();

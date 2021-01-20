@@ -1,7 +1,7 @@
  
   
    body{
-      background-image: url("/assets/img/burger1.jpg");
+      /* background-image: url("/assets/img/burger1.jpg"); */
       height: 100vh;
       width: 100vw;
       /* Center and scale the image nicely */
@@ -10,27 +10,30 @@
       background-size: cover;
       /* Needed to position the navbar */
       /* position: relative; */
-      color:white;
+      color:black;
+      /* color:white; */
       /* font-size:20px; */
+      /* background-color:lightgoldenrodyellow; */
       
     }
 
     .flex-container{
         display:flex;
         /* flex-direction: row; */
-        justify-content: space-around;
+        /* justify-content: space-between; */
         
         
     } 
-.container-1 ul{
-    margin-top:10px;
+.container-1 {
+    margin:30px;
     padding:10px;
-      font-size:20px;
+    font-size:25px;
 
 }
  .container-3{
-    margin:10px;
-    padding:10px;
-      font-size:20px;
+    margin:30px; 
+     padding:10px;
+      font-size:25px;
+      /* color: grey; */
 } 
 
