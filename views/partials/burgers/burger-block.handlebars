@@ -1,11 +1,13 @@
 
 <li>
 	{{burger_name}}
-
-	<button class="burger-status" data-id="{{id}}" data-neweaten={{devoured}}>
+{{#if devoured}}
+	<button class="burger-status" data-id="{{id}}" data-neweaten="true">
 		{{!-- {{#if devoured}}<i class="far fa-thumbs-up"></i>{{/if}}
 		{{#unless devoured}}<i class="fas fa-utensils"></i>{{/unless}} --}}
-			{{#if devoured}}<i class="fas fa-utensils"></i>{{else}}<i class="far fa-thumbs-up"></i>{{/if}}
+			<i class="fas fa-utensils"></i>
 		
 	</button>
+	{{/if}}
 </li>
+

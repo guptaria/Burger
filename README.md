@@ -2,13 +2,9 @@
 
 ## Description
 Eat Da Burger is a Node, Express, Handlebars, and MySQL burger app that lets users input the names of burgers they'd like to eat... and then devour them!<br>
-Key words : Servers, Express.js, MySQL , API routes, Handeblars, Object-relational mapping, Model-View-Controller, Template engines
-
-
-
+Key words : Servers, Express.js, MySQL , API routes, Handeblars, Object-relational mapping, Model-View-Controller, Template engines.
 
 ## Table of Contents 
-
 * [Installation](#Installation)
 * [Functionality](#Functionality)
 * [Technologies_Used](#Technologies_Used)
