@@ -1,9 +1,8 @@
 # 🍔 Eat-Da-Burger!!
 
 ## Description
-This project is a full stack application that allows you to place an order for a burger. When you place an order, the burger you enter in the form field is added to the list of burgers on the left side of the screen. Each burger in the list has a Devour me button. Clicking this button moves the burger from the list on the left side of the screen to the list on the right. The list on the right is a list of burgers that have already been devoured. Each burger in this list has a Throw away button that allows you to remove the burger, which deletes the burger from the user interface as well as from the MySQL database.<br>This project uses MySQL, Node, Express, Handlebars, ORM (Object Relational Mapper). Node and MySQL are used to query and route data in the application. Express is the backend web framework used for this application, and Handlebars is a templating language that is used to generate the HTML.
-
-Key words : Servers, Express.js, MySQL , API routes, Handeblars, Object-relational mapping, Model-View-Controller, Template engines.
+This project is a full stack application that allows you to place an order for a burger. When you place an order, the burger you enter in the form field is added to the list of burgers on the left side of the screen. Each burger in the list has a button. Clicking this button moves the burger from the list on the left side of the screen to the list on the right. The list on the right is a list of burgers that have already been devoured.
+Key words : Servers,Node, Express.js, MySQL , API routes, Handlebars, Object-relational mapping, Model-View-Controller, Template engines.
 
 ## Table of Contents 
 * [Functionality](#Functionality)
@@ -17,8 +16,8 @@ Key words : Servers, Express.js, MySQL , API routes, Handeblars, Object-relation
 ## Functionality
 Using an home-grown ORM, the app has 3 basic CRUD functions...
 READ all entries from the MySQL database and display them to the DOM using Handlebars.<br>
-UPDATE a selected burger by clicking "Devour It", which... * hits an /burger/eat/:id route in Express to change its "devoured" status in the MySQL database * re-routes the webpage back to the index, where the burger is now in the devoured column (via Handlebars)<br>
-CREATE a new burger using the "Place Order" form, which... * hits a /burger/create route in Express to insert a new burger into the MySQL database * re-routes the webpage back to the index, where the burger is now ready to be eaten column (via Handlebars)
+UPDATE a selected burger by clicking Button, which... * hits an /burger/eat/:id route in Express to change its "devoured" status in the MySQL database * re-routes the webpage back to the index, where the burger is now in the devoured column (via Handlebars)<br>
+CREATE a new burger using the "Place Order" form, which... * hits a /burger/insertOne route in Express to insert a new burger into the MySQL database * re-routes the webpage back to the index, where the burger is now ready to be eaten column (via Handlebars)
 
 ## Programming/Scripting_Languages
 ### Front-end
@@ -46,8 +45,6 @@ Model object: A model object manages the data. When data is created or changed b
 ## Getting_Started
 The following section will take you through the steps of setting up this application and getting it running locally on your computer.
 
-If you don't want to set up this project locally and just want to see the deployed application, go to https://gentle-caverns-56054.herokuapp.com/.
-
 To set up this application locally on your computer, perform the following steps:
 
 * [Clone_the_repository](#Clone_the_repository)
@@ -66,7 +63,7 @@ The first step is to clone the project repository to a local directory on your c
   cd Burger
 ```
 ## Structure_Of_the_Project
-After you clone the repository, navigate to the project root directory (burger). The project directory structure is set up as follows:
+After you clone the repository, navigate to the project root directory (Eat-Da-Burger). The project directory structure is set up as follows:
 * server.js: This file does the following:
 
    * Defines and requires the dependencies, including express, body-parser, and express-handlebars.
@@ -82,7 +79,7 @@ After you clone the repository, navigate to the project root directory (burger).
 
    * assets/css/burger_style.css: External CSS stylesheet.
    * assets/img: Contains icons and images used in the application.
-   * assets/js/burger.js: Contains the jQuery ajax POST, DELETE, and PUT requests for adding a burger, throwing away a burger, and updating the devoured value for a burger, respectively.
+   * assets/js/burger.js: Contains the jQuery ajax POST, DELETE, and PUT requests for adding a burger, throwing away a burger, and updating the devoured value for a Eat-Da-Burger, respectively.
 
 * models: Contains a file called burger.js, which contains functions used to manage the application data and interact with the database.
   
@@ -96,7 +93,7 @@ After you clone the repository, navigate to the project root directory (burger).
 
    * connection.js: Contains the code to connect Node to MySQL.
    * orm.js: Contains the methods that will execute the necessary MySQL commands in the controllers. These methods are used to retrieve and store data in the database.
-* controllers: Contains a file called burgersController.js, which contains different routes (GET, POST, PUT, and DELETE). These routes are used to pass information to and from the view and model objects.
+* controllers: Contains a file called burgersController.js, which contains different routes (GET, POST, PUT). These routes are used to pass information to and from the view and model objects.
 
 * views: Contains the Handlebars files, which are templates used to generate the html files.
 
@@ -164,7 +161,7 @@ Your table should look similar to the following example:
 6. ### Create_a_.env_file_to_store_your_MySQL_Password
 If you set up MySQL to use a password to connect to your database, you need to provide your own .env file. If you did not set up MySQL with a password, you can skip this step.
 
-Create a file named .env in the project root directory (burger) with the following contents. Replace mysql_password with your actual MySQL password.
+Create a file named .env in the project root directory (Eat-Da-Burger) with the following contents. Replace mysql_password with your actual MySQL password.
 ```
 # MySQL Password
 MYSQL_PASSWORD='mysql_password'
@@ -187,7 +184,7 @@ For example:
   });
   ```
 8. ### Start_the_server
-After performing all of the setup steps in the Getting started section, navigate to the project root directory (burger) and run the following command to start the server:
+After performing all of the setup steps in the Getting started section, navigate to the project root directory (Eat-Da-Burger) and run the following command to start the server:
 ```
 node server.js
 ```
