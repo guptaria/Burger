@@ -1,7 +1,7 @@
 # 🍔 Eat-Da-Burger!!
 
 ## Description
-This project is a full stack application that allows you to place an order for a burger. When you place an order, the burger you enter in the form field is added to the list of burgers on the left side of the screen. Each burger in the list has a button. Clicking this button moves the burger from the list on the left side of the screen to the list on the right. The list on the right is a list of burgers that have already been devoured.
+This project is a full stack application that allows you to place an order for a burger. When you place an order, the burger you enter in the form field is added to the list of burgers on the left side of the screen. Each burger in the list has a button. Clicking this button moves the burger from the list on the left side of the screen to the list on the right. The list on the right is a list of burgers that have already been devoured.<br>
 Key words : Servers,Node, Express.js, MySQL , API routes, Handlebars, Object-relational mapping, Model-View-Controller, Template engines.
 
 ## Table of Contents 
