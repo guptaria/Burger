@@ -5,6 +5,7 @@ This project is a full stack application that allows you to place an order for a
 Key words : Servers,Node, Express.js, MySQL , API routes, Handlebars, Object-relational mapping, Model-View-Controller, Template engines.
 
 ## Table of Contents 
+* [Live](#Live)
 * [Functionality](#Functionality)
 * [Programming/Scripting_Languages](#Programming/Scripting_Languages)
 * [MVC_design_pattern](#MVC_design_pattern)
@@ -12,6 +13,9 @@ Key words : Servers,Node, Express.js, MySQL , API routes, Handlebars, Object-rel
 * [Structure_Of_the_Project](#Structure_Of_the_Project)
 * [Screenshots](#Screenshots)
 * [Github_Link](#Github_Link)
+
+## Live
+https://eat-da-burger-restaurant-app.herokuapp.com/
 
 ## Functionality
 Using an home-grown ORM, the app has 3 basic CRUD functions...
@@ -44,6 +48,9 @@ Model object: A model object manages the data. When data is created or changed b
 
 ## Getting_Started
 The following section will take you through the steps of setting up this application and getting it running locally on your computer.
+If you don't want to set up this project locally and just want to see the deployed application, go to https://eat-da-burger-restaurant-app.herokuapp.com/.
+
+
 
 To set up this application locally on your computer, perform the following steps:
 
